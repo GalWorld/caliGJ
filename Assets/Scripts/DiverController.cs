@@ -10,6 +10,7 @@ public class DiverController : MonoBehaviour
         if (collision.CompareTag("Player")){
             GameManager.isDiverRescued = true;
             uiController.ShowMessage("ESCAPA, YA VIENEN");
+            uiController.ShowCountdown(20);
             Destroy(this.gameObject);
         }
     }
