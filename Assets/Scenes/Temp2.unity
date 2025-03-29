@@ -262,7 +262,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0.03
-  m_PointLightOuterRadius: 0.99
+  m_PointLightOuterRadius: 1.12
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 610425678}
   - component: {fileID: 610425677}
   - component: {fileID: 610425676}
+  - component: {fileID: 610425680}
   m_Layer: 0
   m_Name: PLAYER
   m_TagString: Player
@@ -409,7 +410,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.24539372, g: 0.7584905, b: 0.113057934, a: 1}
   m_FlipX: 0
@@ -437,6 +438,19 @@ Transform:
   - {fileID: 599686541}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &610425680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 610425675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ac9d66922d38348b15e6ed172b05c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
 --- !u!1 &934642423
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +860,7 @@ MonoBehaviour:
   - {fileID: 1868623719}
   speed: 0
   isChasing: 0
+  isChasingProbe: 0
   isReturningToPatrol: 0
   movingDirection: 
 --- !u!61 &2102017838
@@ -933,7 +948,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: 2747690628134850419, guid: b670ab75dde984907b8570040daa08c5, type: 3}
   m_Color: {r: 0.90188676, g: 0.16846557, b: 0.16846557, a: 1}
   m_FlipX: 0
