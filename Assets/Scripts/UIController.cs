@@ -13,6 +13,10 @@ public class UIController : MonoBehaviour
 
     private Coroutine countdownCoroutine;
 
+    void Start()
+    {
+        ShowCountdown(60);
+    }
     public void ShowMessage(string message)
     {
         StopAllCoroutines();
