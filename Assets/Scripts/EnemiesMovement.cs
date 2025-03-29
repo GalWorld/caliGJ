@@ -17,32 +17,35 @@ public class EnemiesMovement : MonoBehaviour
     public string movingDirection;
     
     private Vector3 lastPositionTarget; 
-    public Animator animator;
+    private GameObject player;
+    //public Animator animator;
     
 
-    void start()
+    void Start()
     {
-        //animator = GetComponent<Animator>(); 
+        //animator = GetComponent<Animator>();
+        player = GameObject.Find("PLAYER"); 
+        movementEnemy();
     }
 
     void Update()
     {
-        // if (isChasing)
-        // {
-        //     chasingPlayer();
-        // }
-        // else if (isReturningToPatrol)
-        // {
-        //     movementEnemy(); 
-        // }
-        // else
-        // {
-        //     movementEnemy(); 
-        // }
+        if (isChasing)
+        {
+            chasingPlayer();
+        }
+        else if (isReturningToPatrol)
+        {
+            movementEnemy(); 
+        }
+        else
+        {
+            movementEnemy(); 
+        }
 
-        // directionMovement();
+        
 
-        movementEnemy();
+        
     }
 
     private void movementEnemy()
@@ -60,34 +63,34 @@ public class EnemiesMovement : MonoBehaviour
         }
     }
 
-    // public void chasingPlayer()
-    // {
-    //     transform.position = Vector2.MoveTowards(transform.position, santaMorpho.position, speed * Time.deltaTime);
-    //     if(Vector2.Distance(transform.position, santaMorpho.position)< 1.0f)
-    //     {
-    //         animator.SetBool("Idle", true);
-    //         animator.SetBool("goRight", false);
-    //         animator.SetBool("goLeft", false);
-    //         animator.SetBool("goUp", false);
-    //         animator.SetBool("GoDown", false);
-    //         isChasing = false;
-    //         Time.timeScale = 0;
-    //         feedBackNegative.SetActive(true);
-    //         audioSource.Stop();
-    //     }
-    // }
+    public void chasingPlayer()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        // if(Vector2.Distance(transform.position, santaMorpho.position)< 1.0f)
+        // {
+        //     animator.SetBool("Idle", true);
+        //     animator.SetBool("goRight", false);
+        //     animator.SetBool("goLeft", false);
+        //     animator.SetBool("goUp", false);
+        //     animator.SetBool("GoDown", false);
+        //     isChasing = false;
+        //     Time.timeScale = 0;
+        //     feedBackNegative.SetActive(true);
+        //     audioSource.Stop();
+        // }
+    }
 
-    // public void MoveToLastPosition(Vector3 position)
-    // {
-    //     lastPositionTarget = position;
-    //     isReturningToPatrol = false; 
-    // }
+    public void MoveToLastPosition(Vector3 position)
+    {
+        lastPositionTarget = position;
+        isReturningToPatrol = false; 
+    }
 
-    // public bool ReachedLastPosition()
-    // {
-    //     transform.position = Vector2.MoveTowards(transform.position, lastPositionTarget, speed * Time.deltaTime);
-    //     return Vector2.Distance(transform.position, lastPositionTarget) > distanceMin;
-    // }
+    public bool ReachedLastPosition()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, lastPositionTarget, speed * Time.deltaTime);
+        return Vector2.Distance(transform.position, lastPositionTarget) > distanceMin;
+    }
 
 
     // private void directionMovement()
