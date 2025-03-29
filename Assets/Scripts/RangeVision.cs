@@ -6,10 +6,18 @@ public class RangeVision : MonoBehaviour
 {
     [SerializeField] private EnemiesMovement enemiesMovement;
     private Vector3 lastKnownPosition;
+    private GameManager gameManager;
+   
+
+    void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     void Update()
     {
         
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -20,15 +28,18 @@ public class RangeVision : MonoBehaviour
             enemiesMovement.isChasing = true;
             enemiesMovement.isReturningToPatrol = false;
             enemiesMovement.speed = 2f; 
-        }
 
-        // if (other.CompareTag("Hide"))
-        // {
+           
+        }
+         if(other.CompareTag("Probe"))
+        {
             
-        //     enemiesMovement.isChasing = false;
-        //     enemiesMovement.isReturningToPatrol = true;
-        //     enemiesMovement.speed = 1f; 
-        // }
+            enemiesMovement.isChasingProbe = true;
+            enemiesMovement.isReturningToPatrol = false;
+            enemiesMovement.speedProbe= 3f; 
+            Debug.Log("Entro con la sonda");
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -38,36 +49,41 @@ public class RangeVision : MonoBehaviour
             
             lastKnownPosition = other.transform.position;
             enemiesMovement.isChasing = false;
+            enemiesMovement.isReturningToPatrol=true;
 
-            StartCoroutine(CheckLastKnownPosition());
+           // StartCoroutine(CheckLastKnownPosition());
+            
+            
         }
+        if (other.CompareTag("Probe"))
+        {
+            lastKnownPosition = other.transform.position;
+            enemiesMovement.isChasingProbe = false;
+            enemiesMovement.isReturningToPatrol=true;
+           // StartCoroutine(CheckLastKnownPosition());
+            
+        }
+
+
         
     }
 
-    // private void OnTriggerStay2D(Collider2D other) {
-    //     if (other.CompareTag("Hide"))
-    //     {
-            
-    //         enemiesMovement.isChasing = false;
-    //         enemiesMovement.isReturningToPatrol = true;
-    //         enemiesMovement.speed = 1f; 
-    //     }
-    // }
 
-    public IEnumerator CheckLastKnownPosition()
-    {
+//     public IEnumerator CheckLastKnownPosition()
+//     {
         
-        enemiesMovement.MoveToLastPosition(lastKnownPosition);
+//         enemiesMovement.MoveToLastPosition(lastKnownPosition);
         
 
        
-        yield return new WaitUntil(() => enemiesMovement.ReachedLastPosition());
+//         yield return new WaitUntil(() => enemiesMovement.ReachedLastPosition());
 
       
-        enemiesMovement.isReturningToPatrol = true;
+//         enemiesMovement.isReturningToPatrol = true;
 
        
-    }
+//     }
 
     
+// }
 }
