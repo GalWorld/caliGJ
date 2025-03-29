@@ -12,8 +12,8 @@ public class LightProbe : MonoBehaviour
     public float speed = 2f;
     private bool increasing = true;
     // Start is called before the first frame update
-    public float fallSpeed = 1.0f; // editable desde el Inspector
-    public float lifeTimeProbe= 3f;
+    public float fallSpeed = 0.5f; // editable desde el Inspector
+    private float lifeTimeProbe= 5f;
 
    void Awake()
 {
