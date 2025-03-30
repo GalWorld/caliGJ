@@ -10,7 +10,7 @@ public class UIController : MonoBehaviour
     [SerializeField] float displayTime = 2f; 
     [SerializeField] GameObject countdownObject;  
     [SerializeField] Text countdownText; 
-
+    [SerializeField] GameManager gameManager;
     private Coroutine countdownCoroutine;
 
     void Start()
@@ -55,5 +55,10 @@ public class UIController : MonoBehaviour
         countdownText.text = "0";
         yield return new WaitForSeconds(1f);
         countdownObject.SetActive(false);
+
+        if (gameManager != null)
+        {
+            gameManager.YouLose();
+        }
     }
 }
