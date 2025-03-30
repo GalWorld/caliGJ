@@ -3,14 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Probe
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Fondo
   - Water
   - UI
+  - Player
+  - Probe
   - 
   - 
   - 
@@ -34,10 +37,11 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Minimapa
   m_SortingLayers:
+  - name: Background
+    uniqueID: 2993991303
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
