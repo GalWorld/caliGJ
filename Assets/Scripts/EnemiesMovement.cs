@@ -17,6 +17,8 @@ public class EnemiesMovement : MonoBehaviour
     private GameObject probe;
     private RangeVision rangeVision;
     private GameManager gameManager;
+    [SerializeField] PlayerHealth playerHealth;
+    [SerializeField] float damage = 30;
 
     void Start()
     {
@@ -86,6 +88,15 @@ public class EnemiesMovement : MonoBehaviour
         if (isChasingProbe && probe != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, probe.transform.position, speedProbe * Time.deltaTime);
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            playerHealth.TakeDamage(damage);
+            Destroy(gameObject);
+
         }
     }
 }

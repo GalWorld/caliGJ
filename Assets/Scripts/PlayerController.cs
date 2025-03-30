@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float fuel = 100f;
     [SerializeField] private float fuelConsumptionRate = 5f;
     [SerializeField] private FuelBar fuelbar;
+    [SerializeField] GameManager gameManager;
 
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
@@ -42,6 +43,7 @@ public class PlayerController : MonoBehaviour
         if (fuel <= 0f)
         {
             speed = 0f;
+            gameManager.YouLose();
         }
     }
 
