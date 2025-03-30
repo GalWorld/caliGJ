@@ -52,4 +52,12 @@ public class GameManager : MonoBehaviour
         }
 
     }
+    public void YouWin()
+    {
+        Debug.Log("Ganaste");
+    }
+    public void YouLose()
+    {
+        Debug.Log("Pediste");
+    }
 }

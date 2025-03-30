@@ -1684,6 +1684,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9085079008939861055, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1540506069}
+    - target: {fileID: 9085079008939861055, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
       propertyPath: uiController
       value: 
       objectReference: {fileID: 585477113}
@@ -1870,6 +1874,10 @@ PrefabInstance:
       propertyPath: fuelbar
       value: 
       objectReference: {fileID: 13527246}
+    - target: {fileID: 7293579309781656909, guid: 64b916b560115d74dadced767ab461d8, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1540506069}
     - target: {fileID: 7579422139494088916, guid: 64b916b560115d74dadced767ab461d8, type: 3}
       propertyPath: m_Name
       value: PLAYER
