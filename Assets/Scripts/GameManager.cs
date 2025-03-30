@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
         RangeVision[] allRangeVisions = FindObjectsOfType<RangeVision>();
         foreach (RangeVision vision in allRangeVisions)
         {
-            vision.IncreaseColliderSize(5f);
+            vision.IncreaseColliderSize(8f);
         }
         uiController.ShowMessage("ESCAPA, YA VIENEN");
         uiController.ShowCountdown(20);
