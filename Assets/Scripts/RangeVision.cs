@@ -14,12 +14,6 @@ public class RangeVision : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
     }
 
-    void Update()
-    {
-        
-
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
@@ -27,7 +21,7 @@ public class RangeVision : MonoBehaviour
             
             enemiesMovement.isChasing = true;
             enemiesMovement.isReturningToPatrol = false;
-            enemiesMovement.speed = 2f; 
+            enemiesMovement.speed = 3f; 
 
            
         }
@@ -51,39 +45,14 @@ public class RangeVision : MonoBehaviour
             enemiesMovement.isChasing = false;
             enemiesMovement.isReturningToPatrol=true;
 
-           // StartCoroutine(CheckLastKnownPosition());
-            
-            
         }
         if (other.CompareTag("Probe"))
         {
             lastKnownPosition = other.transform.position;
             enemiesMovement.isChasingProbe = false;
             enemiesMovement.isReturningToPatrol=true;
-           // StartCoroutine(CheckLastKnownPosition());
-            
+ 
         }
 
-
-        
     }
-
-
-//     public IEnumerator CheckLastKnownPosition()
-//     {
-        
-//         enemiesMovement.MoveToLastPosition(lastKnownPosition);
-        
-
-       
-//         yield return new WaitUntil(() => enemiesMovement.ReachedLastPosition());
-
-      
-//         enemiesMovement.isReturningToPatrol = true;
-
-       
-//     }
-
-    
-// }
 }

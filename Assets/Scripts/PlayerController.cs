@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D playerRB;
     private Vector2 moveInput;
+    private Vector2 lastDirection = Vector2.down;
 
     void Start()
     {
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
         if (moveInput != Vector2.zero && fuel > 0f)
         {
+            lastDirection = moveInput;
+
             fuel -= fuelConsumptionRate * Time.deltaTime;
             fuel = Mathf.Clamp(fuel, 0f, 100f); 
             fuelbar.ChangeCurrentFuel(fuel);
@@ -45,5 +48,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() 
     {
         playerRB.MovePosition(playerRB.position + moveInput * speed * Time.fixedDeltaTime);
+    }
+
+    public Vector2 GetCurrentDirection()
+    {
+        return lastDirection;;
     }
 }

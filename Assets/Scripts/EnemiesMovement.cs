@@ -13,9 +13,6 @@ public class EnemiesMovement : MonoBehaviour
     public bool isChasing = false; 
     public bool isChasingProbe = false;
     public bool isReturningToPatrol = false;
-    private Vector3 lastPosition; 
-    public string movingDirection;
-    private Vector3 lastPositionTarget; 
     private GameObject player;
     private GameObject probe;
     private RangeVision rangeVision;
@@ -54,10 +51,10 @@ public class EnemiesMovement : MonoBehaviour
         {
             movementEnemy(); 
         }
-        else
-        {
-            movementEnemy(); 
-        }   
+        // else
+        // {
+        //     movementEnemy(); 
+        // }   
     }
 
     private void movementEnemy()
@@ -78,6 +75,7 @@ public class EnemiesMovement : MonoBehaviour
     public void chasingPlayer()
     {
         if (isChasing)
+        speed = 3F;
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
@@ -90,16 +88,4 @@ public class EnemiesMovement : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, probe.transform.position, speedProbe * Time.deltaTime);
         }
     }
-
-    // public void MoveToLastPosition(Vector3 position)
-    // {
-    //     lastPositionTarget = position;
-    //     isReturningToPatrol = false; 
-    // }
-
-    // public bool ReachedLastPosition()
-    // {
-    //     transform.position = Vector2.MoveTowards(transform.position, lastPositionTarget, speed * Time.deltaTime);
-    //     return Vector2.Distance(transform.position, lastPositionTarget) > distanceMin;
-    // }
 }

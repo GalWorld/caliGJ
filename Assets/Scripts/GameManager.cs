@@ -31,7 +31,13 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.B))
         {
            
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            Vector2 direction = playerController.GetCurrentDirection();
+
             GameObject newProbe = Instantiate(probe, player.transform.position, Quaternion.identity);
+            
+            newProbe.GetComponent<LightProbe>().SetDirection(direction);
+
             spawnedProbes.Add(newProbe);
             
         }

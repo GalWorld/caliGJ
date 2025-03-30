@@ -13,6 +13,7 @@ public class LightProbe : MonoBehaviour
     private bool increasing = true;
     public float fallSpeed = 0.5f; // editable desde el Inspector
     private float lifeTimeProbe = 3f;
+    private Vector2 moveDirection = Vector2.down;
     
     private GameManager gameManager;
 
@@ -55,10 +56,16 @@ public class LightProbe : MonoBehaviour
         spotLight.pointLightOuterRadius = current;
     }
 
+    public void SetDirection(Vector2 dir)
+    {
+        moveDirection = dir.normalized;
+    }
+
     public void movementProbe()
     {
-        float wave = Mathf.Sin(Time.time * 2f) * 0.1f; // efecto de oleaje vertical pequeño
-        transform.position += new Vector3(0, -(fallSpeed + wave), 0) * Time.deltaTime;
+        float wave = Mathf.Sin(Time.time * 2f) * 0.1f;
+        Vector3 offset = new Vector3(moveDirection.x, moveDirection.y + wave, 0);
+        transform.position += offset * fallSpeed * Time.deltaTime;
     }
 
     void OnDestroy()
