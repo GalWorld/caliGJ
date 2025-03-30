@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
+    }
+    private void FixedUpdate() 
+    {
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
         moveInput = new Vector2 (moveX,moveY).normalized;
@@ -45,10 +49,6 @@ public class PlayerController : MonoBehaviour
             speed = 0f;
             gameManager.YouLose();
         }
-    }
-
-    private void FixedUpdate() 
-    {
         playerRB.MovePosition(playerRB.position + moveInput * speed * Time.fixedDeltaTime);
     }
 

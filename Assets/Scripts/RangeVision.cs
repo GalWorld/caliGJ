@@ -6,12 +6,13 @@ public class RangeVision : MonoBehaviour
 {
     [SerializeField] private EnemiesMovement enemiesMovement;
     private Vector3 lastKnownPosition;
-    private GameManager gameManager;
-   
+    [SerializeField] GameManager gameManager;
+    [SerializeField] BoxCollider2D boxCollider;
+    [SerializeField] float ChangeSize = 5f;
 
     void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -54,5 +55,9 @@ public class RangeVision : MonoBehaviour
  
         }
 
+    }
+    public void IncreaseColliderSize(float ChangeSize)
+    {
+        boxCollider.size += new Vector2(ChangeSize, ChangeSize);
     }
 }
