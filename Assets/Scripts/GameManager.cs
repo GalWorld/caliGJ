@@ -1,7 +1,7 @@
-// GameManager.cs
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,53 +11,78 @@ public class GameManager : MonoBehaviour
     private EnemiesMovement enemiesMovement;
     public List<GameObject> spawnedProbes = new List<GameObject>();
 
+    private bool isCooldown = false;  
+    private int cooldownTime = 5;  
+    private int currentCooldownTime = 0;  
+    public Text coolDownText;
+
     void Start()
     {
         player = GameObject.Find("PLAYER");
         isDiverRescued = false;
         Debug.Log("Estado de rescate del buzo: " + isDiverRescued);
         enemiesMovement = FindObjectOfType<EnemiesMovement>();
-       
     }
 
     void Update()
     {
-        spawnProbe();
+        spawnProbe();  
         checkListProbe();
     }
 
     public void spawnProbe()
     {
-        if (Input.GetKeyDown(KeyCode.B))
+      
+        if (Input.GetKeyDown(KeyCode.B) && !isCooldown)
         {
-           
             PlayerController playerController = player.GetComponent<PlayerController>();
             Vector2 direction = playerController.GetCurrentDirection();
 
             GameObject newProbe = Instantiate(probe, player.transform.position, Quaternion.identity);
-            
+
             newProbe.GetComponent<LightProbe>().SetDirection(direction);
 
             spawnedProbes.Add(newProbe);
+
+           
+            isCooldown = true;
+            currentCooldownTime = cooldownTime;  
+            StartCoroutine(CooldownCoroutine());  
             
         }
     }
 
     public void checkListProbe()
     {
-        if(spawnedProbes.Count<1)
+        if (spawnedProbes.Count < 1)
         {
-            enemiesMovement.isReturningToPatrol=true;
-
+            enemiesMovement.isReturningToPatrol = true;
         }
-
     }
+
+    // Coroutine para manejar el cooldown de la sonda
+    private IEnumerator CooldownCoroutine()
+    {
+       
+        while (currentCooldownTime > 0)
+        {
+            coolDownText.text = "" + currentCooldownTime;  
+            yield return new WaitForSeconds(1f);  
+            currentCooldownTime--; 
+        }
+        
+        isCooldown = false;
+        coolDownText.text = "Cooldown: 0";  
+        Debug.Log("siguiente sonda papi.");
+    }
+
     public void YouWin()
     {
         Debug.Log("Ganaste");
     }
+
     public void YouLose()
     {
-        Debug.Log("Pediste");
+        Debug.Log("Perdiste");
     }
 }
