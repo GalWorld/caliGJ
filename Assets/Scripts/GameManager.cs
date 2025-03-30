@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     private GameObject player;
     private EnemiesMovement enemiesMovement;
     public List<GameObject> spawnedProbes = new List<GameObject>();
-
+    [SerializeField] UIController uiController;
+    //private RangeVision rangeVision;
     private bool isCooldown = false;  
     private int cooldownTime = 5;  
     private int currentCooldownTime = 0;  
@@ -72,8 +73,19 @@ public class GameManager : MonoBehaviour
         }
         
         isCooldown = false;
-        coolDownText.text = "Cooldown: 0";  
+        coolDownText.text = "Press B";
         Debug.Log("siguiente sonda papi.");
+    }
+    public void DiverIsFree ()
+    {
+        isDiverRescued = true;
+        RangeVision[] allRangeVisions = FindObjectsOfType<RangeVision>();
+        foreach (RangeVision vision in allRangeVisions)
+        {
+            vision.IncreaseColliderSize(5f);
+        }
+        uiController.ShowMessage("ESCAPA, YA VIENEN");
+        uiController.ShowCountdown(20);
     }
 
     public void YouWin()

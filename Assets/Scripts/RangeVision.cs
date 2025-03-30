@@ -7,7 +7,7 @@ public class RangeVision : MonoBehaviour
     [SerializeField] private EnemiesMovement enemiesMovement;
     private Vector3 lastKnownPosition;
     [SerializeField] GameManager gameManager;
-    [SerializeField] BoxCollider2D boxCollider;
+    private BoxCollider2D boxCollider;
     [SerializeField] float ChangeSize = 5f;
 
     void Start()

@@ -152,6 +152,8 @@ MonoBehaviour:
   isChasing: 0
   isChasingProbe: 0
   isReturningToPatrol: 0
+  playerHealth: {fileID: 0}
+  damage: 30
 --- !u!1 &2555877562725096657
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +182,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3889, y: 1.3889, z: 1.3889}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6406898332557925881}
@@ -243,3 +245,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesMovement: {fileID: 4722469722892825776}
+  gameManager: {fileID: 0}
+  ChangeSize: 5

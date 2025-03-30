@@ -5,12 +5,11 @@ using UnityEngine;
 public class DiverController : MonoBehaviour
 {
     [SerializeField] UIController uiController;
+    [SerializeField] GameManager gameManager;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")){
-            GameManager.isDiverRescued = true;
-            uiController.ShowMessage("ESCAPA, YA VIENEN");
-            uiController.ShowCountdown(20);
+            gameManager.DiverIsFree();
             Destroy(this.gameObject);
         }
     }

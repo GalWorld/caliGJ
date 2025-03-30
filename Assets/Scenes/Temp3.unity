@@ -262,6 +262,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3b7b7bd798946e4f96812c305fbf749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!61 &827092123 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 6900565065092209696, guid: 7fff3d4f68ecd1b4186a3bf9d7899b5d, type: 3}
+  m_PrefabInstance: {fileID: 1096585875}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1096585875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -274,6 +279,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4279584535973289799, guid: 7fff3d4f68ecd1b4186a3bf9d7899b5d, type: 3}
+      propertyPath: boxCollider
+      value: 
+      objectReference: {fileID: 827092123}
+    - target: {fileID: 4279584535973289799, guid: 7fff3d4f68ecd1b4186a3bf9d7899b5d, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1540506069}
     - target: {fileID: 4722469722892825776, guid: 7fff3d4f68ecd1b4186a3bf9d7899b5d, type: 3}
       propertyPath: playerHealth
       value: 
@@ -614,6 +627,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   probe: {fileID: 4053825548346766919, guid: 87fd9830d497a93429636abeeee0675b, type: 3}
   spawnedProbes: []
+  uiController: {fileID: 585477113}
+  coolDownText: {fileID: 1762139459}
 --- !u!1 &1574443171
 GameObject:
   m_ObjectHideFlags: 3
@@ -707,6 +722,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1762139459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 610294999971505820, guid: 16eafb2c1435ca243b348854982bbfdd, type: 3}
+  m_PrefabInstance: {fileID: 5049295755279109645}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1856056213
@@ -1181,15 +1207,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 735178615489179916, guid: 7fff3d4f68ecd1b4186a3bf9d7899b5d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.0955741
+      value: 1.2892717
       objectReference: {fileID: 0}
     - target: {fileID: 735178615489179916, guid: 7fff3d4f68ecd1b4186a3bf9d7899b5d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.0955741
+      value: 1.2892717
       objectReference: {fileID: 0}
     - target: {fileID: 735178615489179916, guid: 7fff3d4f68ecd1b4186a3bf9d7899b5d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0955741
+      value: 1.2892717
       objectReference: {fileID: 0}
     - target: {fileID: 4279584535973289799, guid: 7fff3d4f68ecd1b4186a3bf9d7899b5d, type: 3}
       propertyPath: boxCollider
@@ -1381,6 +1407,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 644163864770764230, guid: d877c4e73b6747442a4face8dd9086c6, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1540506069}
     - target: {fileID: 644163864770764230, guid: d877c4e73b6747442a4face8dd9086c6, type: 3}
       propertyPath: uiController
       value: 
