@@ -7,14 +7,14 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour
 {
     [SerializeField] GameObject messageObject;
-    [SerializeField] Text messageText;
+    //[SerializeField] Text messageText;
     [SerializeField] TextMeshProUGUI messageTextPro;
     [SerializeField] float displayTime = 2f;
-    [SerializeField] GameObject countdownObject;
     [SerializeField] Image DiverLife;
     [SerializeField] GameManager gameManager;
     private Coroutine countdownCoroutine;
-    private float fillValue = 1.0f;
+    [SerializeField] float fillValue = 1.0f;
+    [SerializeField] GameObject buzzBar;
 
     void Start()
     {
@@ -28,7 +28,7 @@ public class UIController : MonoBehaviour
 
     private IEnumerator ShowMessageRoutine(string message)
     {
-        messageText.text = message;
+        messageTextPro.text = message;
         messageObject.SetActive(true);
         yield return new WaitForSeconds(displayTime);
         messageObject.SetActive(false);
@@ -46,26 +46,27 @@ public class UIController : MonoBehaviour
 
     private IEnumerator CountdownRoutine(int seconds)
     {
-        countdownObject.SetActive(true);
+
+        int originalTime = seconds;
 
         while (seconds > 0)
         {
-            // Asegura que el valor esté entre 0 y 1
-            fillValue = Mathf.Clamp(fillValue, 0f, 1f);
-
-            // Modifica el fillAmount de la imagen
+            fillValue = (float)seconds / originalTime;
             DiverLife.fillAmount = fillValue;
+
             yield return new WaitForSeconds(1f);
             seconds--;
         }
 
-        //countdownText.text = "0";
+        DiverLife.fillAmount = 0f; // Aseguramos que quede vacío visualmente
         yield return new WaitForSeconds(1f);
-        countdownObject.SetActive(false);
 
         if (gameManager != null)
         {
             gameManager.YouLose();
         }
+    }
+    public void TurnOffBar(){
+        buzzBar.SetActive(false);
     }
 }

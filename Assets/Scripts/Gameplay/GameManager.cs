@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
     private bool isCooldown = false;  
     private int cooldownTime = 5;  
     private int currentCooldownTime = 0;  
-    public Text coolDownText;
+    [SerializeField] TextMeshProUGUI coolDownText;
 
     void Start()
     {
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
         }
         
         isCooldown = false;
-        coolDownText.text = "Press B";
+        coolDownText.text = "B";
         Debug.Log("siguiente sonda papi.");
     }
     public void DiverIsFree ()
@@ -85,7 +86,9 @@ public class GameManager : MonoBehaviour
             vision.IncreaseColliderSize(8f);
         }
         uiController.ShowMessage("ESCAPA, YA VIENEN");
-        uiController.ShowCountdown(20);
+        uiController.StopAllCoroutines();
+        uiController.TurnOffBar();
+        //uiController.ShowCountdown(20);
     }
 
     public void YouWin()
