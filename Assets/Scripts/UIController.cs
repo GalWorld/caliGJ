@@ -1,17 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    [SerializeField] GameObject messageObject; 
-    [SerializeField] Text messageText;         
-    [SerializeField] float displayTime = 2f; 
-    [SerializeField] GameObject countdownObject;  
-    [SerializeField] Text countdownText; 
+    [SerializeField] GameObject messageObject;
+    [SerializeField] Text messageText;
+    [SerializeField] TextMeshProUGUI messageTextPro;
+    [SerializeField] float displayTime = 2f;
+    [SerializeField] GameObject countdownObject;
+    [SerializeField] Image DiverLife;
     [SerializeField] GameManager gameManager;
     private Coroutine countdownCoroutine;
+    private float fillValue = 1.0f;
 
     void Start()
     {
@@ -47,12 +50,16 @@ public class UIController : MonoBehaviour
 
         while (seconds > 0)
         {
-            countdownText.text = seconds.ToString();
+            // Asegura que el valor esté entre 0 y 1
+            fillValue = Mathf.Clamp(fillValue, 0f, 1f);
+
+            // Modifica el fillAmount de la imagen
+            DiverLife.fillAmount = fillValue;
             yield return new WaitForSeconds(1f);
             seconds--;
         }
 
-        countdownText.text = "0";
+        //countdownText.text = "0";
         yield return new WaitForSeconds(1f);
         countdownObject.SetActive(false);
 
