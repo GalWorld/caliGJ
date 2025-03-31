@@ -680,6 +680,8 @@ GameObject:
   - component: {fileID: 1540506068}
   - component: {fileID: 1540506067}
   - component: {fileID: 1540506069}
+  - component: {fileID: 1540506071}
+  - component: {fileID: 1540506070}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -730,6 +732,32 @@ MonoBehaviour:
   spawnedProbes: []
   uiController: {fileID: 8136412793595520682}
   coolDownText: {fileID: 1214837356}
+  FeedbackPositive: {fileID: 0}
+  FeedbackNegative: {fileID: 0}
+--- !u!114 &1540506070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540506066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63931d6f4111b674e9c1a88f5e520a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1540506071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540506066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad55f3d7ff604a499f4e3176fdc3c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1574443171
 GameObject:
   m_ObjectHideFlags: 3
