@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     public void spawnProbe()
     {
       
-        if (Input.GetKeyDown(KeyCode.B) && !isCooldown)
+        if (Input.GetKeyDown(KeyCode.Space) && !isCooldown)
         {
             PlayerController playerController = player.GetComponent<PlayerController>();
             Vector2 direction = playerController.GetCurrentDirection();
@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
         }
         
         isCooldown = false;
-        coolDownText.text = "B";
+        coolDownText.text = "Space";
         Debug.Log("siguiente sonda papi.");
     }
     public void DiverIsFree ()

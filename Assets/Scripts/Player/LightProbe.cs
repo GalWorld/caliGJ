@@ -11,8 +11,8 @@ public class LightProbe : MonoBehaviour
     public float maxRadius = 5f;
     public float speed = 2f;
     private bool increasing = true;
-    public float fallSpeed = 0.5f; // editable desde el Inspector
-    private float lifeTimeProbe = 3f;
+    public float fallSpeed = 1.3f; // editable desde el Inspector
+    private float lifeTimeProbe = 6f;
     private Vector2 moveDirection = Vector2.down;
     
     private GameManager gameManager;

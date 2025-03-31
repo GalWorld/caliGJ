@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour
 
     void Start()
     {
-        ShowCountdown(60);
+        ShowCountdown(180);
     }
     public void ShowMessage(string message)
     {
