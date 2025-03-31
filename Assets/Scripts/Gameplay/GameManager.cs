@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using PrimeTween;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,9 @@ public class GameManager : MonoBehaviour
     private int cooldownTime = 5;  
     private int currentCooldownTime = 0;  
     [SerializeField] TextMeshProUGUI coolDownText;
+    [SerializeField] PanelAnimator FeedbackPositive;
+    [SerializeField] PanelAnimator FeedbackNegative;
+
 
     void Start()
     {
@@ -93,11 +97,13 @@ public class GameManager : MonoBehaviour
 
     public void YouWin()
     {
+        FeedbackPositive.ShowPanel();
         Debug.Log("Ganaste");
     }
 
     public void YouLose()
     {
+        FeedbackNegative.ShowPanel();
         Debug.Log("Perdiste");
     }
 }
