@@ -84054,13 +84054,49 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExtractionZone
       objectReference: {fileID: 0}
+    - target: {fileID: 2982750309304146279, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
+      propertyPath: m_Layer
+      value: 31
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982750309304146279, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785391638277013181, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785391638277013181, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785391638277013181, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
+      propertyPath: m_Color.r
+      value: 0.29019594
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785391638277013181, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020902429466892662, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.486317
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020902429466892662, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8.486317
+      objectReference: {fileID: 0}
+    - target: {fileID: 8020902429466892662, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8.486317
+      objectReference: {fileID: 0}
     - target: {fileID: 8020902429466892662, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.8
+      value: 125.5
       objectReference: {fileID: 0}
     - target: {fileID: 8020902429466892662, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.49
+      value: 153.24
       objectReference: {fileID: 0}
     - target: {fileID: 8020902429466892662, guid: 340e2d33c9ddb9245bc03ff4304e1013, type: 3}
       propertyPath: m_LocalPosition.z
@@ -84746,11 +84782,11 @@ PrefabInstance:
       objectReference: {fileID: 8136412793595520682}
     - target: {fileID: 3357740624634869497, guid: d877c4e73b6747442a4face8dd9086c6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0017817058
+      value: 18.57
       objectReference: {fileID: 0}
     - target: {fileID: 3357740624634869497, guid: d877c4e73b6747442a4face8dd9086c6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.88
+      value: -13.38
       objectReference: {fileID: 0}
     - target: {fileID: 3357740624634869497, guid: d877c4e73b6747442a4face8dd9086c6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -85152,6 +85188,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114788553122443903, guid: 64b916b560115d74dadced767ab461d8, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 2.34
+      objectReference: {fileID: 0}
     - target: {fileID: 189569707297953614, guid: 64b916b560115d74dadced767ab461d8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.7
@@ -85192,10 +85232,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5655224588447586933, guid: 64b916b560115d74dadced767ab461d8, type: 3}
-      propertyPath: speed
-      value: 5
+    - target: {fileID: 1845800340914585614, guid: 64b916b560115d74dadced767ab461d8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4861
       objectReference: {fileID: 0}
+    - target: {fileID: 1845800340914585614, guid: 64b916b560115d74dadced767ab461d8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8615073
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845800340914585614, guid: 64b916b560115d74dadced767ab461d8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4861
+      objectReference: {fileID: 0}
+    - target: {fileID: 1845800340914585614, guid: 64b916b560115d74dadced767ab461d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.076
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141698954300411946, guid: 64b916b560115d74dadced767ab461d8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 5655224588447586933, guid: 64b916b560115d74dadced767ab461d8, type: 3}
       propertyPath: fuelbar
       value: 
@@ -85204,9 +85260,9 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1540506069}
-    - target: {fileID: 5655224588447586933, guid: 64b916b560115d74dadced767ab461d8, type: 3}
-      propertyPath: fuelConsumptionRate
-      value: 1
+    - target: {fileID: 5924078187216329996, guid: 64b916b560115d74dadced767ab461d8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.034
       objectReference: {fileID: 0}
     - target: {fileID: 7293579309781656909, guid: 64b916b560115d74dadced767ab461d8, type: 3}
       propertyPath: lifeBar
