@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI coolDownText;
     [SerializeField] PanelAnimator FeedbackPositive;
     [SerializeField] PanelAnimator FeedbackNegative;
+    [SerializeField] AudioController audioController;
 
 
     void Start()
@@ -37,10 +38,10 @@ public class GameManager : MonoBehaviour
     }
 
     public void spawnProbe()
-    {
-      
+    { 
         if (Input.GetKeyDown(KeyCode.B) && !isCooldown)
         {
+            audioController.PlaySFX("Shoot");
             PlayerController playerController = player.GetComponent<PlayerController>();
             Vector2 direction = playerController.GetCurrentDirection();
 
@@ -83,6 +84,7 @@ public class GameManager : MonoBehaviour
     }
     public void DiverIsFree ()
     {
+        audioController.PlayMusic("Persecusion");
         isDiverRescued = true;
         RangeVision[] allRangeVisions = FindObjectsOfType<RangeVision>();
         foreach (RangeVision vision in allRangeVisions)
@@ -98,12 +100,14 @@ public class GameManager : MonoBehaviour
     public void YouWin()
     {
         FeedbackPositive.ShowPanel();
-        Debug.Log("Ganaste");
+        audioController.PlaySFX("Win");
+        Tween.Delay(1.5f, () => Time.timeScale = 0);
     }
 
     public void YouLose()
     {
         FeedbackNegative.ShowPanel();
-        Debug.Log("Perdiste");
+        audioController.PlaySFX("Lose");
+        Tween.Delay(1.5f, () => Time.timeScale = 0);
     }
 }

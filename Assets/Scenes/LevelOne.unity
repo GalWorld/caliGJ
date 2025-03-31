@@ -340,9 +340,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 288608397768513740}
     m_Modifications:
+    - target: {fileID: 1580889719497281107, guid: d694921efb08c164c9967694f8274bde, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580889719497281107, guid: d694921efb08c164c9967694f8274bde, type: 3}
+      propertyPath: canvasGroup
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3395087947684894234, guid: d694921efb08c164c9967694f8274bde, type: 3}
       propertyPath: m_Name
       value: FeedbackPositive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3395087947684894234, guid: d694921efb08c164c9967694f8274bde, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3975643456714681298, guid: d694921efb08c164c9967694f8274bde, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 6134841047189146464, guid: d694921efb08c164c9967694f8274bde, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1540506071}
+    - target: {fileID: 6134841047189146464, guid: d694921efb08c164c9967694f8274bde, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoScene
       objectReference: {fileID: 0}
     - target: {fileID: 8701636452301391148, guid: d694921efb08c164c9967694f8274bde, type: 3}
       propertyPath: m_Pivot.x
@@ -434,6 +458,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8701636452301391148, guid: d694921efb08c164c9967694f8274bde, type: 3}
   m_PrefabInstance: {fileID: 207043052}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &207043054 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1580889719497281107, guid: d694921efb08c164c9967694f8274bde, type: 3}
+  m_PrefabInstance: {fileID: 207043052}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a08fdfdc32db614fab6c0c16de88548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &313725618
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,7 +597,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1366,6 +1401,7 @@ GameObject:
   - component: {fileID: 1540506067}
   - component: {fileID: 1540506069}
   - component: {fileID: 1540506070}
+  - component: {fileID: 1540506071}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1416,8 +1452,9 @@ MonoBehaviour:
   spawnedProbes: []
   uiController: {fileID: 8136412793595520682}
   coolDownText: {fileID: 1214837356}
-  FeedbackPositive: {fileID: 0}
-  FeedbackNegative: {fileID: 0}
+  FeedbackPositive: {fileID: 207043054}
+  FeedbackNegative: {fileID: 1663078879}
+  audioController: {fileID: 1540506070}
 --- !u!114 &1540506070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1428,6 +1465,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63931d6f4111b674e9c1a88f5e520a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1540506071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540506066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad55f3d7ff604a499f4e3176fdc3c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1555217924
@@ -1567,9 +1616,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 288608397768513740}
     m_Modifications:
+    - target: {fileID: 1228168227148355385, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: panel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228168227148355385, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: canvasGroup
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2053782299430313201, guid: ee70b41d155630448921e152969c917a, type: 3}
       propertyPath: m_Name
       value: FeedbackNegativo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2053782299430313201, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917046558976273254, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2917046558976273254, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1540506071}
+    - target: {fileID: 2917046558976273254, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReloadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3123506946964521773, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5389500457856394861, guid: ee70b41d155630448921e152969c917a, type: 3}
       propertyPath: m_Pivot.x
@@ -1651,6 +1728,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6092122507428105470, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: m_text
+      value: "No alcanzaste a salvar al buzo \n!PERDISTE!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6281026239780327422, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1540506071}
+    - target: {fileID: 6281026239780327422, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 6872752173642489190, guid: ee70b41d155630448921e152969c917a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1661,6 +1754,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5389500457856394861, guid: ee70b41d155630448921e152969c917a, type: 3}
   m_PrefabInstance: {fileID: 1663078877}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1663078879 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1228168227148355385, guid: ee70b41d155630448921e152969c917a, type: 3}
+  m_PrefabInstance: {fileID: 1663078877}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a08fdfdc32db614fab6c0c16de88548, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!213 &1800365844
 Sprite:
   m_ObjectHideFlags: 0

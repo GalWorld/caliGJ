@@ -1202,7 +1202,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 99741802203b2484aa7e5d47dc9718dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0819150c0f1d85e4685c2c0ff262ef6b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1981,6 +1981,18 @@ MonoBehaviour:
           m_StringArgument: Buttons
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1884339782}
+        m_TargetAssemblyTypeName: PanelAnimator, Assembly-CSharp
+        m_MethodName: ShowPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1645010695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2657,7 +2669,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: b117e538b97148449bedf5ba0fda0633, type: 3}
     volume: 0.2
   - name: Shoot
-    clip: {fileID: 8300000, guid: 391033d9e80cdca459e52dca6b6bb073, type: 3}
+    clip: {fileID: 8300000, guid: 3c129ec4e7ab0f940a4b2dac17c530fd, type: 3}
     volume: 0.2
   - name: Lose
     clip: {fileID: 8300000, guid: b236518a3d27ddc4895bddfd50a5cce6, type: 3}
@@ -2750,7 +2762,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 99741802203b2484aa7e5d47dc9718dd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecc79a058a1c9c34da7a615322ecfb1f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
