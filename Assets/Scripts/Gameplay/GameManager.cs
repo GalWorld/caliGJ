@@ -102,13 +102,11 @@ public class GameManager : MonoBehaviour
     {
         FeedbackPositive.ShowPanel();
         audioController.PlaySFX("Win");
-        Tween.Delay(1.5f, () => Time.timeScale = 0);
     }
 
     public void YouLose()
     {
         FeedbackNegative.ShowPanel();
         audioController.PlaySFX("Lose");
-        Tween.Delay(1.5f, () => Time.timeScale = 0);
     }
 }

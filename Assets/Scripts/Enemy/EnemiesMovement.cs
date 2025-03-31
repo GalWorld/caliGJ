@@ -62,7 +62,7 @@ public class EnemiesMovement : MonoBehaviour
     private void movementEnemy()
     {
         if (waypoints.Length == 0) return;
-        speed = 0.5f;
+        speed = 4f;
 
         Transform targetWaypoint = waypoints[currentWaypointIndex];
         transform.position = Vector2.MoveTowards(transform.position, targetWaypoint.position, speed * Time.deltaTime);
@@ -77,7 +77,7 @@ public class EnemiesMovement : MonoBehaviour
     public void chasingPlayer()
     {
         if (isChasing)
-        speed = 3F;
+        speed = 5f;
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }

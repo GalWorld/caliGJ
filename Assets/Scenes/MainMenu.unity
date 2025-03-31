@@ -1068,7 +1068,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: TITULO
+  m_text: 'Darkest
+
+    Dread'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b861422968179f469bf5aeee2164ee4, type: 2}
   m_sharedMaterial: {fileID: -5771213608472634466, guid: 6b861422968179f469bf5aeee2164ee4, type: 2}
@@ -1101,7 +1103,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
